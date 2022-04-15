@@ -22,13 +22,8 @@ jobs:
 
       - uses: coursier/cache-action@v6
 
-      - name: Compile main
-        run: ./sbt ${{ matrix.setScalaVersion }} core/compile
-
       - name: Test
-        run: ./sbt core/test
-        if: ${{ matrix.setScalaVersion == 'SetScala2' }}
+        run: ./sbt ${{ matrix.setScalaVersion }} core/test
 
       - name: Benchmark
-        run: ./sbt benchmark/Jmh/run
-        if: ${{ matrix.setScalaVersion == 'SetScala2' }}
+        run: ./sbt ${{ matrix.setScalaVersion }} benchmark/Jmh/run

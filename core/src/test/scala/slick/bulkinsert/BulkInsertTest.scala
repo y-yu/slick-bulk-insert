@@ -10,6 +10,7 @@ import java.sql.SQLIntegrityConstraintViolationException
 class BulkInsertTest extends AnyFlatSpec with Diagrams with BeforeAndAfterEach with BeforeAndAfterAll {
   override def beforeAll(): Unit = {
     super.beforeAll()
+    UserTestDAO.dropTableIfExists()
     UserTestDAO.createTable()
   }
 
@@ -23,6 +24,16 @@ class BulkInsertTest extends AnyFlatSpec with Diagrams with BeforeAndAfterEach w
 
   "bulkInsert" should "insert all data models successfully" in {
     val dms = createDataModels(10)
+
+    assert(UserTestDAO.findAll === Nil)
+    val actual = UserTestDAO.run(UserTestDAO.bulkInsert(dms))
+
+    assert(actual === dms.length)
+    assert(UserTestDAO.findAll === dms)
+  }
+
+  "bulkInsert" should "insert just 1 data models successfully" in {
+    val dms = createDataModels(1)
 
     assert(UserTestDAO.findAll === Nil)
     val actual = UserTestDAO.run(UserTestDAO.bulkInsert(dms))

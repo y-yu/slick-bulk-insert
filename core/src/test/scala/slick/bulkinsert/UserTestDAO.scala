@@ -1,13 +1,13 @@
 package slick.bulkinsert
 
+import slick.CustomTableQuery
 import slick.basic.DatabaseConfig
-import slick.bulkinsert.BulkInsert
 import slick.jdbc.JdbcProfile
 import java.sql.Date
 import scala.concurrent.Await
 import scala.concurrent.duration.*
 
-object UserTestDAO extends BulkInsert[UserDataModel] {
+object UserTestDAO extends BulkInsert[UserDataModel] with CustomTableQuery {
   private val databaseConfig: DatabaseConfig[JdbcProfile] =
     DatabaseConfig.forConfig("testMySQL")
 
@@ -15,7 +15,7 @@ object UserTestDAO extends BulkInsert[UserDataModel] {
 
   import profile.api.*
 
-  override def tableQuery = TableQuery[UserTable]
+  override def tableQuery: TableQuery[UserTable] = TableQuery[UserTable]
 
   class UserTable(tag: Tag) extends Table[UserDataModel](tag, "users") {
     def id = column[Int]("id", O.PrimaryKey)

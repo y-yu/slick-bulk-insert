@@ -26,10 +26,10 @@ trait BulkInsert[A] {
     case h +: ts =>
       SimpleDBIO { session =>
         val placeholder = (1 to bulkInsertable.parameterLength).map(_ => "?").mkString("(", ",", ")")
-        // The query returned by `arel.insertStatement` has a placeholder by default
+        // The query returned by Slick `TableQuery.insertStatement` has a placeholder by default
         // so we use `until` to make `placeholders.length` be `dms.length - 1`.
-        val placeholders = (1 until dms.length).map(_ => placeholder).mkString(",")
-        val sql = s"${tableQuery.insertStatement}, $placeholders"
+        val placeholders = (1 until dms.length).map(_ => placeholder)
+        val sql = (tableQuery.insertStatement +: placeholders).mkString(",")
         val statement = session.connection.prepareStatement(sql)
 
         ts
