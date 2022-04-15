@@ -23,11 +23,18 @@ It works on both Scala 2 and Scala 3.
 
 You can run the benchmark against Slick `++=` with `./sbt benchmark/Jmh/run`.
 
-```
-[info] Benchmark                          Mode  Cnt     Score     Error  Units
-[info] Benchmarks.benchBulkInsertJmh        ss   10   347.465 ±  94.048  ms/op
-[info] Benchmarks.benchSlickInsertAllJmh    ss   10  3411.940 ± 123.495  ms/op
-```
+- Scala 2
+    ```
+    [info] Benchmark                          Mode  Cnt     Score    Error  Units
+    [info] Benchmarks.benchBulkInsertJmh        ss   10   303.221 ± 61.063  ms/op
+    [info] Benchmarks.benchSlickInsertAllJmh    ss   10  2640.769 ± 74.003  ms/op
+    ```
+- Scala 3
+    ```
+    [info] Benchmark                          Mode  Cnt     Score     Error  Units
+    [info] Benchmarks.benchBulkInsertJmh        ss   10   298.794 ±  55.171  ms/op
+    [info] Benchmarks.benchSlickInsertAllJmh    ss   10  2827.452 ± 142.903  ms/op
+    ```
 
 This bulk insertion is about 10 times faster than Slick `++=`.
 
