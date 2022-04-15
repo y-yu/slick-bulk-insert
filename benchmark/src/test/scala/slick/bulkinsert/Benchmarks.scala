@@ -8,7 +8,7 @@ import slick.bulkinsert.UserDataModel.createDataModels
 @BenchmarkMode(Array(Mode.SingleShotTime))
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @Warmup(iterations = 2)
-@Measurement(iterations = 3)
+@Measurement(iterations = 10)
 @Fork(value = 1, warmups = 1)
 class Benchmarks {
   val num = 10000
