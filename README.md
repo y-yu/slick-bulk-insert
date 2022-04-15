@@ -23,11 +23,11 @@ You can run the benchmark against Slick `++=` with `./sbt benchmark/Jmh/run`(onl
 
 ```
 [info] Benchmark                          Mode  Cnt     Score     Error  Units
-[info] Benchmarks.benchBulkInsertJmh        ss    3   370.575 ± 758.468  ms/op
-[info] Benchmarks.benchSlickInsertAllJmh    ss    3  2779.984 ± 955.982  ms/op
+[info] Benchmarks.benchBulkInsertJmh        ss   10   347.465 ±  94.048  ms/op
+[info] Benchmarks.benchSlickInsertAllJmh    ss   10  3411.940 ± 123.495  ms/op
 ```
 
-This bulk insertion is 7 times faster than Slick `++=`.
+This bulk insertion is about 10 times faster than Slick `++=`.
 
 ## References
 
