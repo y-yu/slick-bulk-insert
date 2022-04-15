@@ -3,7 +3,7 @@ Auto bulk `INSERT` query generator for Slick
 
 [![Test and Benchmark](https://github.com/y-yu/slick-bulk-insert/workflows/CI/badge.svg)](https://github.com/y-yu/slick-bulk-insert/actions/workflows/ci.yml)
 
-Auto generation for low-level [Slick](https://scala-slick.org/) _bulk_ insertion query using [shapeless](https://github.com/milessabin/shapeless) and Scala 3 macro.
+Auto generation for low-level [Slick](https://scala-slick.org/) _bulk_ insertion query using [shapeless](https://github.com/milessabin/shapeless) and [shapeless-3](https://github.com/typelevel/shapeless-3).
 
 ```scala
 object UserDAO extends BulkInsert[User] {
@@ -17,9 +17,11 @@ val users: Seq[User] = ???
 UserDAO.bulkInsert(users)
 ```
 
+It works on both Scala 2 and Scala 3.
+
 ## Benchmark
 
-You can run the benchmark against Slick `++=` with `./sbt benchmark/Jmh/run`(only run in Scala 2).
+You can run the benchmark against Slick `++=` with `./sbt benchmark/Jmh/run`.
 
 ```
 [info] Benchmark                          Mode  Cnt     Score     Error  Units
@@ -36,4 +38,4 @@ This bulk insertion is about 10 times faster than Slick `++=`.
 
 ## Acknowledgement
 
-Thanks [@xuwei-k](https://twitter.com/xuwei_k) about Scala 3 macros and Slick `SetParameter`.   
+Thanks [@xuwei-k](https://twitter.com/xuwei_k) about Scala 3 macros, Slick `SetParameter` and shapeless-3 information.   
