@@ -1,0 +1,34 @@
+name: Test and Benchmark
+on:
+  pull_request:
+  push:
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        javaVersion: [ 11 ]
+        setScalaVersion: [ "SetScala2", "SetScala3"]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Docker pull
+        run: docker-compose pull
+
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: ${{ matrix.javaVersion }}
+
+      - uses: coursier/cache-action@v6
+
+      - name: Compile main
+        run: ./sbt ${{ matrix.setScalaVersion }} core/compile
+
+      - name: Test
+        run: ./sbt core/test
+        if: ${{ matrix.setScalaVersion == 'SetScala2' }}
+
+      - name: Benchmark
+        run: ./sbt benchmark/Jmh/run
+        if: ${{ matrix.setScalaVersion == 'SetScala2' }}
