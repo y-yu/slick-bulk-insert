@@ -13,11 +13,8 @@ val isScala3 = Def.setting(
 
 lazy val root =
   (project in file("."))
+    .settings(noPublish: _*)
     .settings(
-      publishArtifact := false,
-      publish := {},
-      publishLocal := {},
-      publish / skip := true,
       addCommandAlias("SetScala3", s"++ $scala3!"),
       addCommandAlias("SetScala2", s"++ $scala213!")
     )
@@ -28,7 +25,7 @@ lazy val root =
 
 lazy val benchmark =
   (project in file("benchmark"))
-    .settings(DockerUtils.runMySQLSetting ++ baseOptions: _*)
+    .settings(DockerUtils.runMySQLSetting ++ baseOptions ++ noPublish: _*)
     .settings(
       name := "slick-bulk-insert-benchmark",
       // IntellJ IDEA doesn't support "compile->test" dependency so it workaround for the problem.
@@ -136,6 +133,13 @@ val baseOptions = Seq(
     "-language:existentials",
     "-unchecked"
   )
+)
+
+val noPublish = Seq(
+  publishArtifact := false,
+  publish := {},
+  publishLocal := {},
+  publish / skip := true
 )
 
 val tagName = Def.setting {
