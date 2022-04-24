@@ -23,6 +23,12 @@ UserDAO.bulkInsert(users)
 
 It works on both Scala 2 and Scala 3.
 
+## Getting started
+
+```scala
+libraryDependency += "com.github.y-yu" %% "slick-bulk-insert" % "<<version>>"
+```
+
 ## Benchmark
 
 You can run the benchmark against Slick `++=` with `./sbt benchmark/Jmh/run`.
