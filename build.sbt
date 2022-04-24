@@ -103,7 +103,9 @@ lazy val core =
         commitNextVersion,
         releaseStepCommand("sonatypeReleaseAll"),
         pushChanges
-      )
+      ),
+      publishConfiguration := publishConfiguration.value.withOverwrite(true),
+      publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true)
     )
 
 val baseOptions = Seq(
