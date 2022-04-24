@@ -6,7 +6,7 @@ import scala.quoted.*
 /** @note
   *   Copy and paste from [[https://github.com/slick/slick/pull/2187]].
   */
-trait CustomTableQuery {
+trait Scala3CompatTableQuery {
   inline def TableQuery[E <: AbstractTable[_]]: TableQuery[E] = ${ TableQueryImpl.applyExpr[E] }
 }
 
