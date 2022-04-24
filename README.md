@@ -3,6 +3,10 @@ Auto bulk `INSERT` query generator for Slick
 
 [![Test and Benchmark](https://github.com/y-yu/slick-bulk-insert/workflows/CI/badge.svg)](https://github.com/y-yu/slick-bulk-insert/actions/workflows/ci.yml)
 
+| Scala 2                                                                                                                                                                  | Scala 3                                                                                                                                                            |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [![Maven](https://img.shields.io/maven-central/v/com.github.y-yu/slick-bulk-insert_2.13.svg)](https://mvnrepository.com/artifact/com.github.y-yu/slick-bulk-insert_2.13) | [![Maven](https://img.shields.io/maven-central/v/com.github.y-yu/slick-bulk-insert_3.svg)](https://mvnrepository.com/artifact/com.github.y-yu/slick-bulk-insert_3) |
+
 Auto generation for low-level [Slick](https://scala-slick.org/) _bulk_ insertion query using [shapeless](https://github.com/milessabin/shapeless) and [shapeless-3](https://github.com/typelevel/shapeless-3).
 
 ```scala
