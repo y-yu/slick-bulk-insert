@@ -48,6 +48,10 @@ You can run the benchmark against Slick `++=` with `./sbt benchmark/Jmh/run`.
 
 This bulk insertion is about 10 times faster than Slick `++=`.
 
+## Documentation
+
+- [SlickのバルクインサートSQLをshapelessで自動生成](https://zenn.dev/yyu/articles/34f8800e3709e9)
+
 ## References
 
 - [Slick 3.0 bulk insert or update (upsert)](https://stackoverflow.com/questions/35001493/slick-3-0-bulk-insert-or-update-upsert)
