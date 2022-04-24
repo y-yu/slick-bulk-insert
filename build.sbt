@@ -98,7 +98,7 @@ lazy val core =
         setReleaseVersion,
         commitReleaseVersion,
         tagRelease,
-        releaseStepCommandAndRemaining("^ publishSigned"),
+        releaseStepCommandAndRemaining("+publishSigned"),
         setNextVersion,
         commitNextVersion,
         releaseStepCommand("sonatypeReleaseAll"),
