@@ -10,6 +10,10 @@ Auto bulk `INSERT` query generator for Slick
 Auto generation for low-level [Slick](https://scala-slick.org/) _bulk_ insertion query using [shapeless](https://github.com/milessabin/shapeless) and [shapeless-3](https://github.com/typelevel/shapeless-3).
 
 ```scala
+import slick.bulkinsert.*
+import AutoDerivedBulkInsertable.*
+// or implicit val instance: BulkInsertable[User] = BulkInsertable.semiauto
+
 object UserDAO extends BulkInsert[User] {
   class UserTable extends Table[User] {
     // ....

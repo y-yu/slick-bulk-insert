@@ -6,6 +6,9 @@ import slick.jdbc.SetParameter
 import java.sql.PreparedStatement
 
 trait BulkInsertableInstances extends BulkInsertableGenericInstances {
+  final def semiauto[A](implicit instance: AutoDerivedBulkInsertable[A]): BulkInsertable[A] =
+    instance
+
   implicit def setParameterInstance[A](implicit
     setParameter: SetParameter[A]
   ): BulkInsertable[A] =

@@ -8,6 +8,8 @@ import slick.bulkinsert.UserDataModel.createDataModels
 import java.sql.SQLIntegrityConstraintViolationException
 
 class BulkInsertTest extends AnyFlatSpec with Diagrams with BeforeAndAfterEach with BeforeAndAfterAll {
+  import AutoDerivedBulkInsertable.*
+
   override def beforeAll(): Unit = {
     super.beforeAll()
     UserTestDAO.dropTableIfExists()
