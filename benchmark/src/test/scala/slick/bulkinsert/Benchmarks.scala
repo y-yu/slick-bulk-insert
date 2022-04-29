@@ -11,6 +11,8 @@ import slick.bulkinsert.UserDataModel.createDataModels
 @Measurement(iterations = 10)
 @Fork(value = 1, warmups = 1)
 class Benchmarks {
+  import AutoDerivedBulkInsertable.*
+
   val num = 10000
   val dms: Seq[UserDataModel] = createDataModels(num)
 

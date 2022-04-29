@@ -26,14 +26,4 @@ trait BulkInsertableGenericInstances { self: BulkInsertableInstances =>
 
     def parameterLength: Int = head.parameterLength + tail.parameterLength
   }
-
-  implicit def hListInstance[A, L <: HList](implicit
-    gen: Generic.Aux[A, L],
-    hList: Lazy[BulkInsertable[L]]
-  ): BulkInsertable[A] = new BulkInsertable[A] {
-    def set(statement: PreparedStatement, a: A): State[Int, Unit] =
-      hList.value.set(statement, gen.to(a))
-
-    def parameterLength: Int = hList.value.parameterLength
-  }
 }
