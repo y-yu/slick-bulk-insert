@@ -48,7 +48,7 @@ lazy val core =
       description := "Supporting Slick bulk insertion using Scala macro",
       libraryDependencies ++= {
         if (scalaBinaryVersion.value == "3") {
-          Seq("org.typelevel" %% "shapeless3-deriving" % "3.0.4")
+          Seq("org.typelevel" %% "shapeless3-deriving" % "3.1.0")
         } else {
           Seq("com.chuusai" %% "shapeless" % "2.3.9")
         }
