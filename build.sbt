@@ -57,7 +57,7 @@ lazy val core =
         "com.typesafe.slick" %% "slick" % "3.3.3" cross CrossVersion.for3Use2_13,
         "org.typelevel" %% "cats-core" % "2.7.0",
         "mysql" % "mysql-connector-java" % "8.0.29" % "test",
-        "org.slf4j" % "slf4j-nop" % "1.7.36" % "test",
+        "org.slf4j" % "slf4j-nop" % "2.0.0" % "test",
         "org.scalatest" %% "scalatest" % "3.2.12" % "test"
       ),
       organization := "com.github.y-yu",
