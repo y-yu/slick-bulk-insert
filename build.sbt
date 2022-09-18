@@ -50,7 +50,7 @@ lazy val core =
         if (scalaBinaryVersion.value == "3") {
           Seq("org.typelevel" %% "shapeless3-deriving" % "3.0.4")
         } else {
-          Seq("com.chuusai" %% "shapeless" % "2.3.9")
+          Seq("com.chuusai" %% "shapeless" % "2.3.10")
         }
       },
       libraryDependencies ++= Seq(
