@@ -5,7 +5,7 @@ import Keys._
 import org.scalafmt.sbt.ScalafmtPlugin.autoImport._
 
 val scala213 = "2.13.10"
-val scala3 = "3.1.2"
+val scala3 = "3.1.3"
 
 val isScala3 = Def.setting(
   CrossVersion.partialVersion(scalaVersion.value).exists(_._1 == 3)
@@ -50,11 +50,11 @@ lazy val core =
         if (scalaBinaryVersion.value == "3") {
           Seq("org.typelevel" %% "shapeless3-deriving" % "3.0.4")
         } else {
-          Seq("com.chuusai" %% "shapeless" % "2.3.9")
+          Seq("com.chuusai" %% "shapeless" % "2.3.10")
         }
       },
       libraryDependencies ++= Seq(
-        "com.typesafe.slick" %% "slick" % "3.3.3" cross CrossVersion.for3Use2_13,
+        "com.typesafe.slick" %% "slick" % "3.4.1" cross CrossVersion.for3Use2_13,
         "org.typelevel" %% "cats-core" % "2.7.0",
         "mysql" % "mysql-connector-java" % "8.0.29" % "test",
         "org.slf4j" % "slf4j-nop" % "1.7.36" % "test",
