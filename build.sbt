@@ -4,7 +4,7 @@ import sbt._
 import Keys._
 import org.scalafmt.sbt.ScalafmtPlugin.autoImport._
 
-val scala213 = "2.13.8"
+val scala213 = "2.13.10"
 val scala3 = "3.1.3"
 
 val isScala3 = Def.setting(
