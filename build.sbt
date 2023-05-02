@@ -5,7 +5,7 @@ import Keys._
 import org.scalafmt.sbt.ScalafmtPlugin.autoImport._
 
 val scala213 = "2.13.10"
-val scala3 = "3.1.3"
+val scala3 = "3.2.2"
 
 val isScala3 = Def.setting(
   CrossVersion.partialVersion(scalaVersion.value).exists(_._1 == 3)
