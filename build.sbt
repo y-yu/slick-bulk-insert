@@ -54,11 +54,11 @@ lazy val core =
         }
       },
       libraryDependencies ++= Seq(
-        "com.typesafe.slick" %% "slick" % "3.5.0" cross CrossVersion.for3Use2_13,
         "org.typelevel" %% "cats-core" % "2.10.0",
+        "com.typesafe.slick" %% "slick" % "3.5.1" cross CrossVersion.for3Use2_13,
         "mysql" % "mysql-connector-java" % "8.0.33" % "test",
         "org.slf4j" % "slf4j-nop" % "2.0.13" % "test",
-        "org.scalatest" %% "scalatest" % "3.2.15" % "test"
+        "org.scalatest" %% "scalatest" % "3.2.18" % "test"
       ),
       organization := "com.github.y-yu",
       homepage := Some(url("https://github.com/y-yu")),
