@@ -56,7 +56,7 @@ lazy val core =
       libraryDependencies ++= Seq(
         "org.typelevel" %% "cats-core" % "2.10.0",
         "com.typesafe.slick" %% "slick" % "3.5.1" cross CrossVersion.for3Use2_13,
-        "mysql" % "mysql-connector-java" % "8.0.33" % "test",
+        "com.mysql" % "mysql-connector-j" % "8.3.0" % "test",
         "org.slf4j" % "slf4j-nop" % "2.0.13" % "test",
         "org.scalatest" %% "scalatest" % "3.2.18" % "test"
       ),
