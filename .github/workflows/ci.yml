@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        javaVersion: [ 11 ]
+        javaVersion: [ 17 ]
         setScalaVersion: [ "SetScala2", "SetScala3"]
     steps:
       - uses: actions/checkout@v2
