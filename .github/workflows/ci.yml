@@ -7,13 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        javaVersion: [ 11 ]
+        javaVersion: [ 17 ]
         setScalaVersion: [ "SetScala2", "SetScala3"]
     steps:
       - uses: actions/checkout@v2
 
       - name: Docker pull
-        run: docker-compose pull
+        run: docker compose pull
 
       - uses: actions/setup-java@v3
         with:
